@@ -4,28 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos</title>
+    <link rel="stylesheet" href="/css/estrutura_pagina.css">
+  <link rel="stylesheet" href="/css/formulario.css">   
      <link rel="shortcut icon" href="/imagens/carrinho_icone_site.png" type="image/x-icon"> <!-- favecon.ico: Para colocar logo na aba da página -->
     
 <body>
-    <nav id="menu">
-        <ul>
-            <li><a href="/index.html" class="lnk_menu"> Pagina Inicial </a></li>
-            <li><a href="/paginas/Cadastro.html" class="lnk_menu"> Cadastro </a></li>
-            <li><a href="/paginas/Produtos_Cadastrados.html" class="lnk_menu">Produtos Cadastrados</a></li>
-        </ul>
-    </nav>
+   <div class="menu">
+       
+            <a href="paginas/Cadastro.html" class="btn-menu"> Cadastrar Produto</a>
+            <a href="paginas/Produtos_Cadastrados.html" class="btn-menu"> Ver Produtos</a>
+        </div>
+    </div>
+    
+<div class="caixa">
+        <h2>Área de Login</h2>
+        
+        <input type="text" id="usuario" placeholder="Usuário (ex: admin)">
+        <input type="password" id="senha" placeholder="Senha (ex: 1234)">
+        
+        <button onclick="fazerLogin()">Entrar</button>
 
-    <section id="formulario">
-        <h3>Faça seu Login</h3>
+        <a href="/index.html" class="link-pagina">🡠 Voltar ao Início</a>
+    </div>
 
-        <form id="form-pessoa">
-            <label for="nome">Email</label>
-            <input type="text" name="email" id="email" class="input01" required maxlength="60" placeholder="digite seu email">
-
-            </div>
-
-            <label for="senha">Senha</label>
-            <input type="passq" name="senha" id="senha" class="input02" required maxlength="6" placeholder="informe a seha">
+    <script src="/js/login.ts"></script>
 
             <div id="div-btns">
                 <button type="submit" id="btn-add"> Cadastra </button>

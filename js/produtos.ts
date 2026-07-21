@@ -1,13 +1,11 @@
-// Precisamos da mesma interface aqui para o TypeScript saber como ler a lista
 interface Produto {
     nome: string;
     preco: string;
 }
 
 function mostrarNaTela(): void {
-    // Avisamos ao TypeScript que isso é uma lista HTML (HTMLUListElement)
     const lista = document.getElementById('lista') as HTMLUListElement;
-    lista.innerHTML = ''; 
+    lista.innerHTML = '';
 
     const produtosSalvos: string | null = localStorage.getItem('meusProdutos');
     let gavetaDeProdutos: Produto[] = [];
@@ -18,7 +16,7 @@ function mostrarNaTela(): void {
 
     if (gavetaDeProdutos.length === 0) {
         lista.innerHTML = '<li>Nenhum produto cadastrado ainda.</li>';
-        return; 
+        return;
     }
 
     for (let i = 0; i < gavetaDeProdutos.length; i++) {
@@ -27,3 +25,6 @@ function mostrarNaTela(): void {
 }
 
 mostrarNaTela();
+
+// Adicione esta linha no final do cadastrar.ts para "liberar" a função para o HTML
+(window as any).cadastrar = cadastrar;

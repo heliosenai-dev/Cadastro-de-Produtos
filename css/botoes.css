@@ -1,0 +1,28 @@
+.subtitulo {
+    text-align: center;
+    color: #666666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-menu {
+    display: block;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-menu:hover {
+    background-color: #0056b3;
+}

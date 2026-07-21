@@ -1,4 +1,15 @@
 "use strict";
+function excluirProduto(indice) {
+    const produtosSalvos = localStorage.getItem('meusProdutos');
+    if (produtosSalvos === null) {
+        return;
+    }
+    let gavetaDeProdutos = JSON.parse(produtosSalvos);
+    alert("Tem certeza que quer excluir?");
+    gavetaDeProdutos.splice(indice, 1);
+    localStorage.setItem('meusProdutos', JSON.stringify(gavetaDeProdutos));
+    mostrarNaTela();
+}
 function mostrarNaTela() {
     const lista = document.getElementById('lista');
     lista.innerHTML = '';
@@ -11,8 +22,16 @@ function mostrarNaTela() {
         lista.innerHTML = '<li>Nenhum produto cadastrado ainda.</li>';
         return;
     }
-    for (const produto of gavetaDeProdutos) {
-        lista.innerHTML += `<li><strong>${produto.nome}</strong> - R$ ${produto.preco}</li>`;
-    }
+    gavetaDeProdutos.forEach((produto, indice) => {
+        lista.innerHTML += `
+            <li>
+                <strong>${produto.nome}</strong> - R$ ${produto.preco}
+                <button onclick="excluirProduto(${indice})">
+                    Excluir
+                </button>
+            </li>
+        `;
+    });
 }
 mostrarNaTela();
+window.excluirProduto = excluirProduto;

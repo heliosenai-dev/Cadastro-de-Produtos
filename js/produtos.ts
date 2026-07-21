@@ -3,6 +3,22 @@ interface Produto {
     preco: string;
 }
 
+function excluirProduto(indice: number): void {
+    const produtosSalvos = localStorage.getItem('meusProdutos');
+
+    if (produtosSalvos === null) {
+        return;
+    }
+
+    let gavetaDeProdutos: Produto[] = JSON.parse(produtosSalvos);
+    alert("Tem certeza que quer excluir?")
+    gavetaDeProdutos.splice(indice, 1);
+
+    localStorage.setItem('meusProdutos', JSON.stringify(gavetaDeProdutos));
+
+    mostrarNaTela();
+}
+
 function mostrarNaTela(): void {
     const lista = document.getElementById('lista') as HTMLUListElement;
     lista.innerHTML = '';
@@ -19,9 +35,20 @@ function mostrarNaTela(): void {
         return;
     }
 
-   for (const produto of gavetaDeProdutos) {
-    lista.innerHTML += `<li><strong>${produto.nome}</strong> - R$ ${produto.preco}</li>`;
-    }
+    gavetaDeProdutos.forEach((produto, indice) => {
+        lista.innerHTML += `
+            <li>
+                <strong>${produto.nome}</strong> - R$ ${produto.preco}
+                <button onclick="excluirProduto(${indice})">
+                    Excluir
+                </button>
+            </li>
+        `;
+    });
+
+
 }
 
 mostrarNaTela();
+
+(window as any).excluirProduto = excluirProduto;

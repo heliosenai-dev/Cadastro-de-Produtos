@@ -1,21 +1,29 @@
-function mostrarNaTela() {
-    let lista = document.getElementById('lista');
+// Precisamos da mesma interface aqui para o TypeScript saber como ler a lista
+interface Produto {
+    nome: string;
+    preco: string;
+}
+
+function mostrarNaTela(): void {
+    // Avisamos ao TypeScript que isso é uma lista HTML (HTMLUListElement)
+    const lista = document.getElementById('lista') as HTMLUListElement;
     lista.innerHTML = ''; 
 
-    // Puxa os dados salvos no navegador. O JSON.parse transforma o texto de volta em uma lista.
-    let gavetaDeProdutos = JSON.parse(localStorage.getItem('meusProdutos')) || [];
+    const produtosSalvos: string | null = localStorage.getItem('meusProdutos');
+    let gavetaDeProdutos: Produto[] = [];
 
-    // Se a gaveta estiver vazia, avisa o usuário
-    if (gavetaDeProdutos.length === 0) {
-        lista.innerHTML = '<li>Nenhum produto cadastrado ainda.</li>';
-        return; // Para a função aqui
+    if (produtosSalvos !== null) {
+        gavetaDeProdutos = JSON.parse(produtosSalvos);
     }
 
-    // Se tiver produtos, passa por cada um e cria a linha
+    if (gavetaDeProdutos.length === 0) {
+        lista.innerHTML = '<li>Nenhum produto cadastrado ainda.</li>';
+        return; 
+    }
+
     for (let i = 0; i < gavetaDeProdutos.length; i++) {
         lista.innerHTML += `<li><strong>${gavetaDeProdutos[i].nome}</strong> - R$ ${gavetaDeProdutos[i].preco}</li>`;
     }
 }
 
-// Isso faz com que a função rode automaticamente assim que você abre a página produtos.html
 mostrarNaTela();

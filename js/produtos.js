@@ -15,6 +15,10 @@ function mostrarNaTela() {
     lista.innerHTML = '';
     const produtosSalvos = localStorage.getItem('meusProdutos');
     let gavetaDeProdutos = [];
+    const inputPesquisa = document.getElementById("pesquisa");
+    const textoPesquisa = inputPesquisa
+        ? inputPesquisa.value.toLowerCase()
+        : "";
     if (produtosSalvos !== null) {
         gavetaDeProdutos = JSON.parse(produtosSalvos);
     }
@@ -22,7 +26,8 @@ function mostrarNaTela() {
         lista.innerHTML = '<li>Nenhum produto cadastrado ainda.</li>';
         return;
     }
-    gavetaDeProdutos.forEach((produto, indice) => {
+    const produtosFiltrados = gavetaDeProdutos.filter(produto => produto.nome.toLowerCase().includes(textoPesquisa));
+    produtosFiltrados.forEach((produto, indice) => {
         lista.innerHTML += `
             <li>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}

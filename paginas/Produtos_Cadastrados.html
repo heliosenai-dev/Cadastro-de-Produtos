@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produtos</title>
-     <link rel="shortcut icon" href="/imagens/carrinho_icone_site.png" type="image/x-icon"> <!-- favecon.ico: Para colocar logo na aba da página -->
-      <link rel="stylesheet" href="/css/estrutura_pagina.css">
+    <link rel="shortcut icon" href="/imagens/carrinho_icone_site.png" type="image/x-icon">
+    <!-- favecon.ico: Para colocar logo na aba da página -->
+    <link rel="stylesheet" href="/css/estrutura_pagina.css">
     <link rel="stylesheet" href="/css/listagem.css">
+
+    <!-- Conecta o código de leitura -->
+    <script src="/js/produtos.js" defer></script>
+
 </head>
-</head>
+
 <body>
-   <div class="menu">
-            <a href="paginas/Cadastro.html" class="btn-menu"> Cadastrar Produto</a>
-           
-        </div>
+
+    <div class="menu">
+        <a href="Cadastro.html" class="btn-menu"> Cadastrar Produto</a>
+        <a href="Produtos_Cadastrados.html" class="btn-menu"> Ver Produtos</a>
     </div>
+
     <div class="caixa">
         <!-- Link para voltar para a página principal -->
         <a href="/index.html" class="link-pagina">🡠 Voltar para a tela inicial</a>
 
         <h2>Produtos Cadastrados</h2>
-        <ul id="lista"></ul>
+        <ul id="lista">
+
+        </ul>
     </div>
 
-    <!-- Conecta o código de leitura -->
-    <script src="/js/produtos.ts"></script>
 </body>
+
 </html>

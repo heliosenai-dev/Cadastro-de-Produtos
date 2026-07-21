@@ -26,6 +26,12 @@ function mostrarNaTela(): void {
     const produtosSalvos: string | null = localStorage.getItem('meusProdutos');
     let gavetaDeProdutos: Produto[] = [];
 
+    const inputPesquisa = document.getElementById("pesquisa") as HTMLInputElement;
+
+    const textoPesquisa = inputPesquisa
+    ? inputPesquisa.value.toLowerCase()
+    : "";
+
     if (produtosSalvos !== null) {
         gavetaDeProdutos = JSON.parse(produtosSalvos);
     }
@@ -35,7 +41,11 @@ function mostrarNaTela(): void {
         return;
     }
 
-    gavetaDeProdutos.forEach((produto, indice) => {
+    const produtosFiltrados = gavetaDeProdutos.filter(produto =>
+        produto.nome.toLowerCase().includes(textoPesquisa)
+    );
+
+    produtosFiltrados.forEach((produto, indice) => {
         lista.innerHTML += `
             <li>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}

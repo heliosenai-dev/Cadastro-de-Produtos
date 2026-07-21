@@ -19,12 +19,9 @@ function mostrarNaTela(): void {
         return;
     }
 
-    for (let i = 0; i < gavetaDeProdutos.length; i++) {
-        lista.innerHTML += `<li><strong>${gavetaDeProdutos[i].nome}</strong> - R$ ${gavetaDeProdutos[i].preco}</li>`;
+   for (const produto of gavetaDeProdutos) {
+    lista.innerHTML += `<li><strong>${produto.nome}</strong> - R$ ${produto.preco}</li>`;
     }
 }
 
 mostrarNaTela();
-
-// Adicione esta linha no final do cadastrar.ts para "liberar" a função para o HTML
-(window as any).cadastrar = cadastrar;

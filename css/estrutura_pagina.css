@@ -1,15 +1,12 @@
 /* Configurações gerais  e centralização da página */
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    
+
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-image: url('/imagens/fundo.jpg');
-    /* Faz a imagem cobrir toda a tela sem esticar/distorcer */
     background-size: cover;
-    /* Centraliza a foto na tela */
     background-position: center;
-    /* Impede que a foto se repita várias vezes em mosaico */
     background-repeat: no-repeat;
-    /* 5. Deixa o fundo fixo enquanto você rola a página */
     background-attachment: fixed;
     margin: 0;
     padding: 0;

@@ -15,3 +15,15 @@ li {
     color: #495057;
     font-size: 15px;
 }
+/* Barra de Pesquisa*/
+.pesquisa{
+     width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s
+}

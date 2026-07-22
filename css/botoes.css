@@ -35,3 +35,15 @@
     margin-right: 5px;
 }
 
+.lnk_menu{
+display: block;
+    padding: 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    padding: 10px;
+}

@@ -10,6 +10,20 @@ function excluirProduto(indice) {
     localStorage.setItem('meusProdutos', JSON.stringify(gavetaDeProdutos));
     mostrarNaTela();
 }
+function editarPreco(indice) {
+    const produtosSalvos = localStorage.getItem("meusProdutos");
+    if (produtosSalvos === null) {
+        return;
+    }
+    let gavetaDeProdutos = JSON.parse(produtosSalvos);
+    const novoPreco = prompt("Digite o novo preço:", gavetaDeProdutos[indice].preco);
+    if (novoPreco === null || novoPreco.trim() === "") {
+        return;
+    }
+    gavetaDeProdutos[indice].preco = novoPreco;
+    localStorage.setItem("meusProdutos", JSON.stringify(gavetaDeProdutos));
+    mostrarNaTela();
+}
 function mostrarNaTela() {
     const lista = document.getElementById('lista');
     lista.innerHTML = '';
@@ -31,6 +45,11 @@ function mostrarNaTela() {
         lista.innerHTML += `
             <li>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}
+    
+                <button onclick="editarPreco(${indice})">
+                    Editar
+                </button>
+    
                 <button onclick="excluirProduto(${indice})">
                     Excluir
                 </button>
@@ -40,3 +59,4 @@ function mostrarNaTela() {
 }
 mostrarNaTela();
 window.excluirProduto = excluirProduto;
+window.editarPreco = editarPreco;

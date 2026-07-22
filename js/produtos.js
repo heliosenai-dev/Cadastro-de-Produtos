@@ -11,7 +11,7 @@ function excluirProduto(indice) {
         return;
     }
 
-    // Converte os dados para um vetor
+    // Converte a string do Local Storage em um array
     let gavetaDeProdutos = JSON.parse(produtosSalvos);
     alert("Tem certeza que quer excluir?");
 
@@ -26,7 +26,7 @@ function excluirProduto(indice) {
 // Função responsável por editar o preço
 function editarPreco(indice) {
 
-        // Busca os produtos salvos
+    // Busca os produtos salvos
     const produtosSalvos = localStorage.getItem("meusProdutos");
 
     // Se não existir nenhum produto, encerra a função
@@ -34,7 +34,7 @@ function editarPreco(indice) {
         return;
     }
 
-    // Converte os dados para um vetor
+    // Converte a string do Local Storage em um array
     let gavetaDeProdutos = JSON.parse(produtosSalvos);
 
     // Pede um novo preço
@@ -64,7 +64,7 @@ function mostrarNaTela() {
     // Busca os produtos salvos
     const produtosSalvos = localStorage.getItem('meusProdutos');
 
-    // Cria um vetor vazio
+    // Cria um array vazio
     let gavetaDeProdutos = [];
 
     // Pega o campo de pesquisa

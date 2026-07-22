@@ -4,7 +4,7 @@ interface Produto {
     preco: string;
 }
 
-// Função responsável por cadastrar um produto
+// Função para cadastrar um produto
 function cadastrar(): void {
 
     // Pega os campos do HTML
@@ -29,24 +29,27 @@ function cadastrar(): void {
 
     // Procura se já existem produtos salvos
     const produtosSalvos: string | null = localStorage.getItem('meusProdutos');
+
+    // Cria um array vazio para guardar os produtos
     let gavetaDeProdutos: Produto[] = [];
 
-    // Cria um vetor vazio para guardar os produtos
+     // Se existirem produtos salvos, converte a string para um array
     if (produtosSalvos !== null) {
         gavetaDeProdutos = JSON.parse(produtosSalvos);
     }
 
-    // Adiciona o novo produto ao vetor
+    // Adiciona o novo produto ao array
     gavetaDeProdutos.push(produto);
-    // Salva novamente no Local Storage
+
+    // Salva novamente os produtos
     localStorage.setItem('meusProdutos', JSON.stringify(gavetaDeProdutos));
 
-    // Limpa os campos do formulário
+    // Limpa os campos
     inputNome.value = '';
     inputPreco.value = '';
 
-    // Exibe mensagem de sucesso
     alert("Produto cadastrado com sucesso!");
 }
+
 // Libera a função para ser chamada pelo HTML
 (window as any).cadastrar = cadastrar;

@@ -1,4 +1,4 @@
-// Função responsável por fazer o login
+// Função para fazer o login
 function fazerLogin(): void {
 
     // Pega os campos do formulário

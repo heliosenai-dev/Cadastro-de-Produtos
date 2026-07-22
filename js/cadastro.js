@@ -1,5 +1,5 @@
 "use strict";
-// Função responsável por cadastrar um produto
+// Função para cadastrar um produto
 function cadastrar() {
 
     // Pega os campos do HTML
@@ -25,15 +25,15 @@ function cadastrar() {
     // Busca os produtos salvos no navegador
     const produtosSalvos = localStorage.getItem('meusProdutos');
 
-    // Cria um vetor para armazenar os produtos
+    // Cria um array vazio para guardar os produtos
     let gavetaDeProdutos = [];
 
-    // Se já existirem produtos, converte para vetor
+   // Se existirem produtos salvos, converte a string para um array
     if (produtosSalvos !== null) {
         gavetaDeProdutos = JSON.parse(produtosSalvos);
     }
 
-    // Adiciona o novo produto
+    // Adiciona o novo produto ao array
     gavetaDeProdutos.push(produto);
 
     // Salva novamente os produtos

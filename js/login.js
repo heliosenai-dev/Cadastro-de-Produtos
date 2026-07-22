@@ -1,5 +1,5 @@
 "use strict";
-// Função responsável por fazer o login
+// Função para fazer o login
 function fazerLogin() {
 
     // Pega os campos do formulário
@@ -25,4 +25,5 @@ function fazerLogin() {
         alert("Usuário ou senha incorretos! (Dica: tente admin / 1234)");
     }
 }
+
 window.fazerLogin = fazerLogin;

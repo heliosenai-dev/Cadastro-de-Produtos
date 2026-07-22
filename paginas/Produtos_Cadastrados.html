@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/listagem.css">
     <link rel="stylesheet" href="/css/botoes.css">
 
-    <!-- Conecta o código de leitura -->
     <script src="/js/produtos.js" defer></script>
 
 </head>
@@ -23,20 +22,28 @@
 
     </div>
 
+     <!-- Caixa onde os produtos serão exibidos -->
     <div class="caixa">
         <!-- Link para voltar para a página principal -->
         <a href="/index.html" class="link-pagina">🡠 Voltar para a tela inicial</a>
 
         <h2>Produtos Cadastrados</h2>
+
+        <!-- Campo utilizado para pesquisar produtos -->
+
         <input
     type="text"
     id="pesquisa"
     placeholder="Pesquisar produto..."
     onkeyup="mostrarNaTela()"
     >
+
+         <!-- Lista onde os produtos serão mostrados pelo JavaScript -->
+
         <ul id="lista">
 
         </ul>
+        
     </div>
 
 </body>

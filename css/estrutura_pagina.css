@@ -20,32 +20,30 @@ body {
 }
 /* A caixa central branca onde fica o conteúdo */
 .caixa {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #121212;          
+    color: #ffffff;                     
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* Sombra marcante */
     width: 100%;
-    max-width: 360px;
+    max-width: 600px;
 }
 
 /* Títulos */
 h2 {
-    color: #333333;
+   color: #ffffff;
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
-    font-size: 22px;
 }
 
-/* Links de navegação entre as páginas */
+/* Links de acesso entre as páginas */
 .link-pagina {
-    display: block;
+   display: block;
     text-align: center;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    color: #007bff;
+    margin-bottom: 20px;
+    color: #3b82f6;                      /* Azul destacado */
     text-decoration: none;
-    font-size: 14px;
     font-weight: bold;
 }
 

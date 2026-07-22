@@ -74,14 +74,13 @@ function mostrarNaTela(): void {
         lista.innerHTML += `
             <li>
                 <strong>${produto.nome}</strong> - R$ ${produto.preco}
-    
-                <button onclick="editarPreco(${indice})">
-                    Editar
-                </button>
-    
-                <button onclick="excluirProduto(${indice})">
-                    Excluir
-                </button>
+                <button class="btn-editar" onclick="editarPreco(${indice})">
+                <img class="icone-botao" src="/imagens/editar_icon.png" alt="Editar">
+            </button>
+            
+            <button class="btn-excluir" onclick="excluirProduto(${indice})">
+                <img class="icone-botao" src="/imagens/remove_icon.png" alt="Excluir">
+            </button>
             </li>
         `;
     });

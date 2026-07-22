@@ -29,6 +29,9 @@
 
 
 .icone-botao {
+    gap: 10px; /* espaço entre os botões */
     width: 20px;
     height: 20px;
+    margin-right: 5px;
 }
+
